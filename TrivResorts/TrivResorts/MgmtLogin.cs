@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TrivResorts
 {
-    class MgmtLogin
+    class Mmgt
     {
         public int MgmtNumber { get; }
         public string MgmtName_First { get; set; }
