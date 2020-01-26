@@ -6,29 +6,23 @@ namespace TrivResorts
 {
     class Customer
     {
-        /// <summary>
-        /// Customer class 
-        /// </summary>
-        public int CustomerNumber { get; set; }
-        public int BoughtTickets { get; set; }
-        public int TotalTickets { get; set; }
+        private static int LastCustomerNumber = 1;
+        public int CustomerNumber { get; private set; }
         public string CustomerName_First { get; set; }
         public string CustomerName_Last { get; set; }
-        public DateTime CreatedDate { get; }
+        public DateTime CreatedDate { get; private set; }
         public string CustomerEmail { get; set; }
+        public int BoughtTickets { get; set; }
 
-        /* what customer can do ? [action]
-           create account or login
-           buy tickets
-           write feedback
-        */
-        #region Methods
+        #region Constructor
 
-        public int BUY(int BoughtTickets)
+        public Customer()
         {
-            BoughtTickets = TotalTickets - BoughtTickets;
-            return BoughtTickets;
-           
+
+            LastCustomerNumber = LastCustomerNumber + 1;
+            CustomerNumber = LastCustomerNumber;
+
+            CreatedDate = DateTime.UtcNow;
         }
 
         #endregion
